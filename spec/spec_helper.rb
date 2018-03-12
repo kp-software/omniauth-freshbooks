@@ -1,11 +1,13 @@
-$:.unshift File.expand_path("..", __FILE__)
-$:.unshift File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require "coveralls"
-Coveralls.wear!
+require 'rspec'
+require 'simplecov'
+SimpleCov.start
 
-require "bundler/setup"
-require "rspec"
+require 'omniauth'
+require 'omniauth-freshbooks'
 
 RSpec.configure do |config|
+  config.extend OmniAuth::Test::StrategyMacros, type: :strategy
 end

@@ -20,7 +20,7 @@ And then, you need to add the following to your `config/initializers/omniauth.rb
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :freshbooks, "consumer_key", "consumer_secret" 
+  provider :freshbooks, ENV['FRESHBOOKS_KEY'], ENV['FRESHBOOKS_SECRET'] 
 end
 ```
 

@@ -1,27 +1,25 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "omniauth/freshbooks/version"
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+require 'omniauth/freshbooks/version'
 
 Gem::Specification.new do |s|
-  s.name          = "omniauth-freshbooks"
-  s.version       = Omniauth::Freshbooks::VERSION
-  s.authors       = ["Francois Deschenes"]
-  s.email         = ["fdeschenes@me.com"]
-  s.description   = %q{FreshBooks OAuth strategy for OmniAuth}
-  s.summary       = %q{FreshBooks OAuth strategy for OmniAuth}
-  s.homepage      = "https://github.com/fdeschenes/omniauth-freshbooks"
-  s.license       = "MIT"
+  s.name          = 'omniauth-freshbooks'
+  s.version       = OmniAuth::Freshbooks::VERSION
+  s.authors       = ['Francois Deschenes']
+  s.email         = ['fdeschenes@me.com']
+  s.summary       = 'FreshBooks OAuth2 strategy for OmniAuth'
+  s.description   = 'FreshBooks OAuth2 strategy for OmniAuth'
+  s.homepage      = 'https://github.com/fdeschenes/omniauth-freshbooks'
+  s.license       = 'MIT'
 
-  s.files         = Dir["LICENSE.txt", "README.md", "lib/**/*"]
-  s.test_files    = Dir["spec/**/*"]
-  s.require_paths = ["lib"]
+  s.files         = `git ls-files`.split('\n')
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split('\n')
+  s.executables   = `git ls-files -- bin/*`.split('\n').collect { |f| File.basename(f) }
+  s.require_paths = ['lib']
 
-  s.add_development_dependency "bundler", "~> 1.3"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "multi_json"
-  s.add_development_dependency "coveralls"
-  
-  s.add_dependency "omniauth-oauth"
-  s.add_dependency "multi_xml"
+  s.add_runtime_dependency 'omniauth', '~> 1.2'
+  s.add_runtime_dependency 'omniauth-oauth2', '~> 1.1'
+
+  s.add_development_dependency 'dotenv', '~> 0'
+  s.add_development_dependency 'sinatra', '~> 0'
 end
