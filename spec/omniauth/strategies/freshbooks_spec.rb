@@ -15,19 +15,15 @@ describe OmniAuth::Strategies::Freshbooks do
     end
 
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://api.freshbooks.com')
+      expect(subject.options.client_options.site).to eq('https://reshbooks.com')
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('https://login.freshbooks.com/oauth/authorize')
+      expect(subject.options.client_options.authorize_url).to eq('https://my.freshbooks.com/service/auth/oauth/authorize')
     end
 
     it 'should have correct access token url' do
-      expect(subject.options.client_options.token_url).to eq('https://login.freshbooks.com/oauth/token')
-    end
-
-    it 'should indicate that the provider ignores the state parameted' do
-      expect(subject.options.provider_ignores_state).to eq false
+      expect(subject.options.client_options.token_url).to eq('https://api.freshbooks.com/auth/oauth/token')
     end
   end
 end
