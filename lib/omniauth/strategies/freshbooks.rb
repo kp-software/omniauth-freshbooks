@@ -7,7 +7,7 @@ module OmniAuth
 
       option :client_options, {
           site: 'https://freshbooks.com',
-          authorize_url: 'https://my.freshbooks.com/service/auth/integrations/sign_in',
+          authorize_url: 'https://my.freshbooks.com/service/auth/oauth/authorize',
           token_url: 'https://api.freshbooks.com/auth/oauth/token'
       }
     end
